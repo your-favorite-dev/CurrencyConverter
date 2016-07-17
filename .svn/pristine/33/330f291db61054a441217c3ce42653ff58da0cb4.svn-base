@@ -1,0 +1,17 @@
+package org.mygroup.currencyconverter.enums;
+
+public enum Currency {
+	EUR(1.00),GBP(1.00),CHF(1.00);
+	
+	private final double conversion;
+	
+	private Currency(double rate){
+		this.conversion = rate;
+	}
+
+	public double getConversion() {
+		return conversion;
+	}
+
+
+}

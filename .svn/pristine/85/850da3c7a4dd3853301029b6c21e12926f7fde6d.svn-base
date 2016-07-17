@@ -1,0 +1,44 @@
+package org.mygroup.currencyconverter.utils;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class Grouper {
+	
+	public Map<String, List<String[]>> groupByCountry(List<String[]> fields){
+		Map<String, List<String[]>> countryGroup = new HashMap<>();
+		String key = "";
+		for(String[] sa:fields){
+			key = sa[3];
+			if(key.trim().matches("")){
+				key = sa[2];
+			}
+			
+			if(countryGroup.containsKey(key)){
+				countryGroup.get(key).add(sa);
+			}else{
+				countryGroup.put(key, new ArrayList<>());
+				countryGroup.get(key).add(sa);
+			}
+		}
+		return countryGroup;
+	}
+	
+	public Map<String, List<String[]>> groupByRating(List<String[]> fields){
+		Map<String, List<String[]>> ratingGroup = new HashMap<>();
+		String key = "";
+		for(String[] sa:fields){
+			key = sa[5];
+			if(ratingGroup.containsKey(key)){
+				ratingGroup.get(key).add(sa);
+			}else{
+				ratingGroup.put(key, new ArrayList<>());
+				ratingGroup.get(key).add(sa);
+			}
+		}
+		return ratingGroup;
+	}
+
+}

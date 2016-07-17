@@ -1,0 +1,5 @@
+package org.mygroup.currencyconverter.core;
+
+public class CurrencyConverter {
+
+}
